@@ -1,0 +1,216 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+%Version for spanish users, by dgarhdez
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{White}{%
+			\parbox{5cm}{%
+			\hfill\color{Black}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\noindent\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{Nelson Arturo Castillo Lopez}
+\MySlogan{Systems Engineer}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Personal data}{}
+
+\PersonalEntry{birth}{September 30, 1980}
+%\PersonalEntry{Address}{111 First St, New York}
+\PersonalEntry{Telephone}{(+57) 3204543305}
+\PersonalEntry{E--Mail}{\url{Nel8030@hotmail.com}}
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education History}{}
+
+\EducationEntry{Systems Engineer}{2001-2002}{COORPORACION UNIFICADA NACIONAL –CUN}{
+\begin{itemize}
+\item{Class of 2016/ Professional Profile}
+\item{Managing and monitoring all installed systems and infrastructure. Installing,
+configuring, testing and maintaining operating systems, application
+software and system management tools. Ensuring the highest levels of
+systems and infrastructure availability.}
+\end{itemize}
+}
+\EducationEntry{TECHNOLOGIST IN ANALYSIS AND DEVELOPMENT OF INFORMATION
+SYSTEMS}{}{SENA}{
+\begin{itemize}
+\item{Class of 2019/ Professional Profile}
+\item{Data analysts are responsible for analyzing data using statistical
+techniques, implementing and maintaining databases, gathering data from
+primary and secondary sources, identifying, analyzing and interpreting
+trends from the data.
+}
+\end{itemize}
+}
+\EducationEntry{PROFESSIONAL TECHNICIAN IN OFFICE}{}{SENA}{
+\begin{itemize}
+\item{Class of 2009/ Professional Profile}
+\item{General office duties include: typing, dictation and transcription; mail and document
+handling; filing and records management; document preparation and review; composition
+of correspondence; oral communications; statistical and other record keeping; cashiering;
+and ordering and maintaining supplies and equipment.
+.
+}
+\end{itemize}
+}
+
+
+\sepspace
+
+
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Employment history}{}
+
+\EducationEntry{Junior Professiona}{June 2019/ Present}{COLPENSIONES}{
+\begin{itemize}
+\item{Development and administration of the Monitoring Information System.
+ADEPRONI WEB, developed for the Department of Economic Benefits.
+Automation of reports and publication via the web, generating support
+documentation corresponding to all the systems developed}
+\item{Computer solutions developed in Java, database administration in SQL Server
+2014-2017, reporting.}
+\item{Development in Visual Basic, Visual Studio, C#, JAVA.}
+\vspace{}
+
+\end{itemize}
+
+
+
+}
+
+\EducationEntry{PROFESSIONAL IN PARAMETERIZATION}{May 2017 / November 2017}{TELEFONICA MOVISTAR}{
+\begin{itemize}
+\item{Parameterization in Full Star project. Creation of rate plans in ORACLE and
+SQL Server databases. Creation, modification, deletion, and record queries.
+}
+
+
+\end{itemize}
+
+
+
+}
+
+
+\sepspace
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Relevant Skills}{}
+
+
+
+\SkillsEntry{Software}{Excel, PowerPoint, ...}
+\SkillsEntry{Soft skills}{Worked well independently and on a team to solve problems.}
+\SkillsEntry{}{Served as a friendly, hardworking, and punctual employee.}
+\SkillsEntry{}{Organized and prioritized work to complete assignments in a timely, efficient manner.}
+\SkillsEntry{}{Communicated effectively using a variety of communication platforms.}
+\SkillsEntry{}{Collaborated on high priority projects with tact and a strong attention to detail.}
+%\SkillsEntry{}{}
+
+
+
+
+%%% References
+%%% ------------------------------------------------------------
+%\NewPart{References}{}
+%Available upon request
+\end{document}
